@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ConsoleApplication1
+namespace HashBack
 {
-    class Program
+    class MainClass
     {
         static void Main(string[] args)
         {

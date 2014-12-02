@@ -5,12 +5,12 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("ConsoleApplication1")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyTitle("HashBack")]
+[assembly: AssemblyDescription("Hash tree based backup system")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("ConsoleApplication1")]
-[assembly: AssemblyCopyright("Copyright ©  2014")]
+[assembly: AssemblyCompany("ZZW")]
+[assembly: AssemblyProduct("HashBack")]
+[assembly: AssemblyCopyright("Copyright © 2014 William Scales")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
