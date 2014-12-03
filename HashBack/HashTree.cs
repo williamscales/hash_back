@@ -30,11 +30,11 @@ namespace HashBack
             get { return BitConverter.ToString(tree.Value).Replace("-", ""); }
         }
 
-	    public HashTree(List<byte[]> hashes)
+	    public HashTree(List<byte[]> data)
 	    {
             // The number of leaf nodes needed is ceil(log2(N)), i.e. the
             // smallest power of 2 >= N where N is the number of hashes
-            var N = hashes.Count;
+            var N = data.Count;
             var width = Math.Ceiling(Math.Log(N, 2));
 
             // We build the tree from the bottom up, by making a node for each
@@ -42,8 +42,9 @@ namespace HashBack
             // at a time to build the tree.
             var nodes = new Queue<Node<byte[]>>();
             SHA256 hasher = new SHA256Managed();
-            foreach (byte[] hash in hashes)
+            foreach (byte[] datum in data)
             {
+                var hash = hasher.ComputeHash(datum);
                 var node = new Node<byte[]>(hash);
                 nodes.Enqueue(node);
             }
@@ -83,5 +84,12 @@ namespace HashBack
             // The last node in the queue is the root
             tree = nodes.Dequeue();
 	    }
+
+        // Verify the integrity of the hash tree by checking the hashes. Return
+        // True if the tree is OK, False otherwise.
+        public bool VerifyTree()
+        {
+            return false;
+        }
     }
 }

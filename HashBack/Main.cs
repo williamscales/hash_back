@@ -12,17 +12,15 @@ namespace HashBack
     {
         static int Main(string[] args)
         {
-            // Simple example which takes strings as command line arguments
-            // and hashes them.
+            // Simple example that makes a hash tree which verifies some
+            // strings
             var myStrings = new string[] { "foo", "bar", "baz", "qux" };
-            SHA256 hasher = new SHA256Managed();
-            var hashes = new List<byte[]>();
+            var data = new List<byte[]>();
             foreach (var myString in myStrings)
             {
-                var toHash = Encoding.UTF8.GetBytes(myString);
-                hashes.Add(hasher.ComputeHash(toHash));
+                data.Add(Encoding.UTF8.GetBytes(myString));
             }
-            var tree = new HashTree(hashes);
+            var tree = new HashTree(data);
             Console.WriteLine(tree.RootHash);
             Console.ReadLine();
 
