@@ -42,6 +42,6 @@ Given a list of files, the steps to make a snapshot are:
 #. Initialize a `HashTree` of depth log2(N), where N is the smallest power of 2
    greater than or equal to the number of blocks.
 #. Fill the binary tree leaf nodes from left to right with the hashes of the
-   pieces
+   pieces.
 #. Fill any excess leaf nodes with zeroes
 #. The set of blocks along with the Merkle tree comprises a snapshot.
